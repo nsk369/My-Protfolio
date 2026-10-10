@@ -3,19 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nimmakuri Shajukumar | Technical Skilling, Industrial Consulting & Curated Commerce</title>
-  
-  <!-- Tailwind CSS CDN -->
+  <title>Nimmakuri Shajukumar | Technical Advisory, Trainings & Commerce Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-
+  <!-- Razorpay Checkout Standard SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -25,1154 +20,512 @@
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            nimmakuri: {
-              50: '#f0fdfa',
-              100: '#ccfbf1',
-              400: '#2dd4bf',
-              500: '#14b8a6',
-              600: '#0d9488',
-              accent: '#38bdf8',
-              gold: '#f59e0b',
-              dark: '#070b14',
-              surface: '#0f172a',
-              card: '#131e36',
-              border: '#1e293b'
+            primary: {
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
             }
           }
         }
       }
     }
   </script>
-
-  <style>
-    /* Custom glow and backdrop effects */
-    .glow-cyan {
-      box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.15);
-    }
-    .glow-teal {
-      box-shadow: 0 0 35px -5px rgba(20, 184, 166, 0.2);
-    }
-    /* Smooth toast animation */
-    #toast-notification {
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-  </style>
 </head>
-<body class="bg-nimmakuri-dark text-slate-200 font-sans antialiased selection:bg-teal-500 selection:text-white min-h-screen flex flex-col justify-between">
+<body class="bg-[#0b0f19] text-slate-200 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- Navigation Header -->
-  <nav class="sticky top-0 z-50 bg-[#070b14]/90 backdrop-blur-md border-b border-nimmakuri-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo / Identity -->
-      <a href="#hero" class="flex items-center space-x-3 group">
-        <div class="h-11 w-11 rounded-xl bg-gradient-to-br from-teal-500 to-sky-600 flex items-center justify-center font-extrabold text-white shadow-lg shadow-teal-500/25 group-hover:scale-105 transition">
-          <span class="text-xl font-mono tracking-tighter">NS</span>
+  <!-- Top Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="h-10 w-10 rounded-xl bg-blue-600 flex items-center justify-center font-extrabold text-white shadow-lg shadow-blue-500/25">
+          <span>NS</span>
         </div>
-        <div class="flex flex-col">
-          <span class="text-lg sm:text-xl font-extrabold tracking-tight text-white leading-none">
-            NIMMAKURI<span class="text-teal-400">.IO</span>
-          </span>
-          <span class="text-[10px] font-mono tracking-wider text-slate-400 uppercase mt-1">
-            Training &bull; Services &bull; Store
-          </span>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-white">NIMMAKURI<span class="text-blue-500">.IO</span></span>
+          <p class="text-[10px] text-slate-400 font-mono tracking-wider uppercase">Technical Consultancy & Skilling</p>
         </div>
-      </a>
-
-      <!-- Desktop Navigation Menu -->
-      <div class="hidden lg:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-slate-300">
-        <a href="#trainings" class="hover:text-teal-400 transition">Technical Skilling</a>
-        <a href="#services" class="hover:text-teal-400 transition">Industrial & Placement</a>
-        <a href="#shopping" class="hover:text-teal-400 transition flex items-center gap-1.5 text-amber-400">
-          <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> Curated Shop
-        </a>
-        <a href="#about" class="hover:text-teal-400 transition">About Founder</a>
-        <a href="#contact" class="hover:text-teal-400 transition">Consultation</a>
       </div>
-
-      <!-- Quick Action Controls -->
-      <div class="flex items-center gap-3">
-        <a href="#shopping" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold hover:bg-amber-500/20 transition">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Deals
+      <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-blue-400 transition">About Founder</a>
+        <a href="#trainings" class="hover:text-blue-400 transition">Technical Trainings</a>
+        <a href="#services" class="hover:text-blue-400 transition">Consulting & Placements</a>
+        <a href="#booking" class="text-blue-400 font-semibold hover:text-blue-300 transition flex items-center gap-1.5">
+          <i data-lucide="calendar-check" class="w-4 h-4"></i> Book & Pay
         </a>
-        <a href="#contact" class="px-4 py-2.5 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-semibold text-xs tracking-wide shadow-md shadow-teal-600/30 transition flex items-center gap-2">
-          <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Inquire Now
+        <a href="#shopping" class="hover:text-blue-400 transition">Curated Store</a>
+        <a href="#booking" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition shadow-md shadow-blue-600/30">
+          Book Consultation
         </a>
-        <!-- Mobile menu toggle -->
-        <button id="mobile-toggle-btn" onclick="toggleMobileNav()" class="lg:hidden p-2 text-slate-400 hover:text-white rounded-lg border border-slate-800">
-          <i data-lucide="menu" class="w-5 h-5"></i>
-        </button>
       </div>
-    </div>
-
-    <!-- Mobile Dropdown Navigation -->
-    <div id="mobile-menu" class="hidden lg:hidden px-6 pt-3 pb-6 border-b border-nimmakuri-border bg-nimmakuri-surface/95 space-y-3 text-sm">
-      <a href="#trainings" onclick="toggleMobileNav()" class="block py-2 text-slate-300 hover:text-teal-400 font-medium">Technical Skilling</a>
-      <a href="#services" onclick="toggleMobileNav()" class="block py-2 text-slate-300 hover:text-teal-400 font-medium">Industrial & Placement Services</a>
-      <a href="#shopping" onclick="toggleMobileNav()" class="block py-2 text-amber-400 hover:text-amber-300 font-medium flex items-center gap-2">
-        <i data-lucide="shopping-bag" class="w-4 h-4"></i> Curated Shopping & Materials
-      </a>
-      <a href="#about" onclick="toggleMobileNav()" class="block py-2 text-slate-300 hover:text-teal-400 font-medium">About Nimmakuri Shajukumar</a>
-      <a href="#contact" onclick="toggleMobileNav()" class="block py-2 text-teal-400 font-semibold">Book Consultation</a>
     </div>
   </nav>
 
-  <main class="flex-grow">
-    <!-- Hero Section -->
-    <section id="hero" class="relative pt-16 sm:pt-24 pb-20 px-4 sm:px-6 max-w-7xl mx-auto overflow-hidden">
-      <!-- Ambient decorative gradient orbs -->
-      <div class="absolute -top-40 left-1/4 w-[500px] h-[300px] bg-teal-500/10 blur-[130px] pointer-events-none rounded-full"></div>
-      <div class="absolute top-20 right-10 w-[450px] h-[300px] bg-sky-500/10 blur-[140px] pointer-events-none rounded-full"></div>
+  <!-- Hero Section -->
+  <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto relative overflow-hidden">
+    <div class="absolute -top-36 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-blue-600/15 blur-[120px] pointer-events-none rounded-full"></div>
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-mono mb-6">
+        <span class="h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
+        Industry Skilling &bull; Cyber Defense &bull; Engineering &bull; Placement Advisory
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+        Mastering Technology, Defense & Industrial Engineering.
+      </h1>
+      <p class="mt-6 text-lg text-slate-400 leading-relaxed">
+        Led by <span class="text-white font-semibold">Nimmakuri Shajukumar</span> — delivering industry-grade technical certifications, industrial design remodeling, cyber defense architectures, and tri-tier career placement facilitation.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#booking" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 font-semibold text-white shadow-lg shadow-blue-600/30 transition flex items-center gap-2">
+          Book Training / Consultation <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#about" class="px-6 py-3.5 rounded-xl border border-slate-700 hover:bg-slate-800/60 font-semibold text-slate-300 transition flex items-center gap-2">
+          <i data-lucide="user" class="w-4 h-4"></i> Meet the Founder
+        </a>
+      </div>
+    </div>
+  </section>
 
+  <!-- About the Founder Section -->
+  <section id="about" class="py-20 border-t border-slate-800 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <!-- Main Pitch -->
-        <div class="lg:col-span-8">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-400 text-xs font-mono mb-6">
-            <span class="h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
-            Technical Pedagogy &bull; Manufacturing Design &bull; Multi-Track Placement
-          </div>
-
-          <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
-            Engineering the Future.<br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-sky-400 to-indigo-400">
-              Training Minds, Empowering Industry.
-            </span>
-          </h1>
-
-          <p class="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-            I am <strong class="text-white font-semibold">Nimmakuri Shajukumar</strong>—a senior mentor and consultant specializing in end-to-end 
-            <span class="text-teal-400 font-medium">Cybersecurity & Cloud Systems</span>, 
-            <span class="text-sky-400 font-medium">Advanced CAD & 3D Additive Manufacturing</span>, and 
-            <span class="text-amber-400 font-medium">Tri-Tier Placement Support</span> across IT, Corporate Non-IT, and Blue-Collar trades.
-          </p>
-
-          <div class="mt-8 flex flex-wrap items-center gap-4">
-            <a href="#trainings" class="px-6 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 font-semibold text-white shadow-lg shadow-teal-600/30 transition flex items-center gap-2 text-sm">
-              <i data-lucide="book-open-check" class="w-4 h-4"></i> Explore Training Programs
-            </a>
-            <a href="#services" class="px-6 py-3.5 rounded-xl border border-slate-700 bg-slate-900/60 hover:bg-slate-800 font-semibold text-slate-200 transition flex items-center gap-2 text-sm">
-              <i data-lucide="settings" class="w-4 h-4"></i> Industrial & Placement Solutions
-            </a>
-            <a href="#shopping" class="px-6 py-3.5 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 font-semibold text-amber-300 transition flex items-center gap-2 text-sm">
-              <i data-lucide="shopping-bag" class="w-4 h-4"></i> Curated Store & Gear
-            </a>
-          </div>
-        </div>
-
-        <!-- Founder Quick Snapshot Card -->
-        <div class="lg:col-span-4">
-          <div class="p-6 sm:p-7 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/80 glow-teal backdrop-blur-sm relative">
-            <div class="flex items-center gap-4 pb-5 border-b border-slate-800">
-              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-teal-500 to-sky-500 flex items-center justify-center font-bold text-white text-xl shadow-md font-mono">
-                NS
-              </div>
-              <div>
-                <h3 class="font-bold text-white text-base">Nimmakuri Shajukumar</h3>
-                <p class="text-xs text-teal-400 font-mono">Lead Consultant & Instructor</p>
-                <span class="inline-block mt-1 text-[11px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">Available for Engagements</span>
-              </div>
+        <!-- Visual Badge Card -->
+        <div class="lg:col-span-5">
+          <div class="relative p-8 rounded-3xl border border-slate-800 bg-[#0f172a] shadow-2xl">
+            <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-3xl font-extrabold text-white shadow-lg shadow-blue-500/30 mb-6">
+              NS
             </div>
-
-            <div class="py-4 space-y-3 text-xs text-slate-300">
-              <div class="flex items-center justify-between">
-                <span class="text-slate-400">Primary Disciplines</span>
-                <span class="font-mono text-white font-medium">Cyber, CAD, Cloud, ERP</span>
+            <h3 class="text-2xl font-bold text-white">Nimmakuri Shajukumar</h3>
+            <p class="text-sm font-mono text-blue-400 mt-1">Senior Technical Trainer & Industry Liaison Specialist</p>
+            
+            <div class="mt-6 space-y-3 border-t border-slate-800 pt-6 text-xs text-slate-300 font-mono">
+              <div class="flex items-center gap-2">
+                <i data-lucide="award" class="w-4 h-4 text-blue-400"></i>
+                <span>Over 8+ Years of Skilling & Training Excellence</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-slate-400">Placement Sectors</span>
-                <span class="font-mono text-teal-300 font-medium">IT, Non-IT, Blue-Collar</span>
+              <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Cybersecurity & Infrastructure Specialist</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-slate-400">Manufacturing Focus</span>
-                <span class="font-mono text-white font-medium">Cost Cutting & Rapid 3D</span>
+              <div class="flex items-center gap-2">
+                <i data-lucide="box" class="w-4 h-4 text-amber-400"></i>
+                <span>CAD, Additive Manufacturing & Fusion 360</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span class="text-slate-400">Location</span>
-                <span class="font-mono text-slate-300">India & Global Hybrid</span>
+              <div class="flex items-center gap-2">
+                <i data-lucide="users" class="w-4 h-4 text-cyan-400"></i>
+                <span>State & Institutional Placement Drive Lead</span>
               </div>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800">
-              <a href="https://wa.me/?text=Hello%20Nimmakuri%20Shajukumar,%20I%20would%20like%20to%20discuss%20training%20or%20consulting%20services." target="_blank" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition shadow-md shadow-emerald-600/20">
-                <i data-lucide="message-circle" class="w-4 h-4"></i> Quick WhatsApp Message
-              </a>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Trust Metrics / Proven Track Record -->
-      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-10 border-t border-nimmakuri-border">
-        <div class="p-5 rounded-xl bg-nimmakuri-surface/50 border border-slate-800 text-center">
-          <p class="text-2xl sm:text-3xl font-extrabold text-teal-400 font-mono">12+</p>
-          <p class="text-xs text-slate-400 mt-1 uppercase font-semibold">Core Tech Domains</p>
-        </div>
-        <div class="p-5 rounded-xl bg-nimmakuri-surface/50 border border-slate-800 text-center">
-          <p class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">1,000+</p>
-          <p class="text-xs text-slate-400 mt-1 uppercase font-semibold">Candidates Trained</p>
-        </div>
-        <div class="p-5 rounded-xl bg-nimmakuri-surface/50 border border-slate-800 text-center">
-          <p class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">3 Tracks</p>
-          <p class="text-xs text-slate-400 mt-1 uppercase font-semibold">IT, Non-IT & Blue Collar</p>
-        </div>
-        <div class="p-5 rounded-xl bg-nimmakuri-surface/50 border border-slate-800 text-center">
-          <p class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">100%</p>
-          <p class="text-xs text-slate-400 mt-1 uppercase font-semibold">Hands-on Lab Pedagogy</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 1: Technical Trainings Hub -->
-    <section id="trainings" class="py-20 border-t border-nimmakuri-border bg-nimmakuri-surface/30">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-teal-400 uppercase">
-              <i data-lucide="terminal" class="w-4 h-4"></i> Professional Skilling Curriculum
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Comprehensive Technical Trainings</h2>
-            <p class="text-slate-400 text-sm mt-2 max-w-xl">
-              Industry-grade curriculums personally taught by Nimmakuri Shajukumar, focusing on real-world testbeds, live simulations, and job-ready certifications.
+        <!-- Bio & Credentials Details -->
+        <div class="lg:col-span-7">
+          <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Leadership & Credentials</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">About the Founder</h2>
+          <div class="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p>
+              <strong class="text-white">Nimmakuri Shajukumar</strong> is an experienced Technical Trainer, Industrial Consultant, and Placement Liaison with a deep track record of empowering institutions, engineering colleges, and corporate workforces across emerging technical domains.
             </p>
-          </div>
-
-          <!-- Training Category Filter Buttons -->
-          <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="training-filter-buttons">
-            <button onclick="filterTrainings('all')" class="train-btn px-3.5 py-2 rounded-lg text-xs font-semibold bg-teal-600 text-white transition">All Domains (12)</button>
-            <button onclick="filterTrainings('cyber')" class="train-btn px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Cyber & Networks</button>
-            <button onclick="filterTrainings('cloud-db')" class="train-btn px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Cloud & Oracle</button>
-            <button onclick="filterTrainings('cad-3d')" class="train-btn px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">CAD & 3D Printing</button>
-          </div>
-        </div>
-
-        <!-- Training Cards Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="training-cards-container">
-
-          <!-- 1. Ethical Hacking -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-teal-500/50 transition group" data-category="cyber">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="skull" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-teal-400">Security & Defense</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">Lab Driven</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Ethical Hacking</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Penetration testing methodologies, Metasploit, web vulnerability exploitation (OWASP Top 10), and ethical footprinting techniques.
+            <p>
+              Having orchestrated extensive state-level workforce skilling programs, job melas, and faculty enablement partnerships (including initiatives with TASK, academic universities, and technology enterprises), his methodology combines hands-on laboratory rigor with real-world employability.
             </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Reconnaissance & Scanning</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Vulnerability Analysis</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Exploitation & Reporting</li>
+            <p>
+              His multi-disciplinary practice spans:
+            </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                <span><strong>Defensive Cybersecurity:</strong> Ethical Hacking, Incident Handling & Network Hardening.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                <span><strong>Advanced Manufacturing:</strong> Fusion 360, 3D Printing, AutoCAD, SolidWorks.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                <span><strong>Enterprise Technology:</strong> Oracle Primavera P6, Oracle DB, AWS Cloud & IoT.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                <span><strong>Employment Linkages:</strong> End-to-end guidance for IT, Non-IT, & Blue-Collar placements.</span>
+              </li>
             </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-teal-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
           </div>
-
-          <!-- 2. Cybersecurity & Cyber Defence -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-teal-500/50 transition group" data-category="cyber">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="shield-alert" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-teal-400">Blue Team Ops</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">Industry Grade</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Cybersecurity & Cyber Defence</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              SOC analyst preparation, incident response workflows, SIEM analysis, defensive firewall policy design, and endpoint defense.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Incident Triage & Playbooks</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Network Threat Hardening</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Security Compliance Auditing</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-teal-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 3. Networking & IT Essentials -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-teal-500/50 transition group" data-category="cyber">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="network" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-teal-400">Core Infrastructure</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">Foundational</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Networking & IT Essentials</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              CCNA-aligned network engineering, TCP/IP deep-dive, subnetting, hardware diagnostics, Linux OS administration, and routing protocols.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> IPv4/IPv6 & VLAN Structuring</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Packet Tracer & Wireshark Labs</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Hardware Troubleshooting</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-teal-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 4. Internet of Things (IoT) -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-teal-500/50 transition group" data-category="cyber">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="cpu" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-teal-400">Smart Systems</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">Hardware Prototyping</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Internet of Things (IoT)</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Microcontroller programming (ESP32, Arduino, Raspberry Pi), sensor interfacing, MQTT communication protocols, and edge telemetry.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Sensor Mesh Interfacing</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Cloud MQTT Dashboards</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Industrial IoT Security</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-teal-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 5. AWS Cloud Computing -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-sky-500/50 transition group" data-category="cloud-db">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="cloud" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-sky-400">Cloud Architecture</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">High Demand</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">AWS Cloud Computing</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              AWS Solutions Architect essentials: EC2 deployment, VPC network isolation, IAM zero-trust access, S3, RDS, and automated cloud scaling.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> VPC, Subnets & Security Groups</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Auto-Scaling & Load Balancing</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Cloud Cost Optimization</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-sky-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 6. Oracle Database & Administration -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-sky-500/50 transition group" data-category="cloud-db">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="database" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-sky-400">Enterprise Data</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">SQL / PL-SQL</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Oracle Database</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Relational data modeling, PL/SQL stored procedures, triggers, indexing architectures, performance tuning, and DBA maintenance.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Advanced Query Optimization</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Tablespaces & Recovery Procedures</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> High Availability Principles</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-sky-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 7. Oracle Primavera P6 -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-sky-500/50 transition group" data-category="cloud-db">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="calendar-range" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-sky-400">Project Governance</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">EPC & Industrial</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Oracle Primavera (P6)</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Enterprise project portfolio management, Work Breakdown Structures (WBS), Critical Path Method (CPM), resource leveling, and variance analysis.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Gantt Baseline & Scheduling</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Earned Value Management (EVM)</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Risk & Cost Tracking</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-sky-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 8. Autodesk Fusion 360 -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/50 transition group" data-category="cad-3d">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="box" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-amber-400">Parametric Modeling</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">CAD / CAM</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Autodesk Fusion 360</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Integrated cloud CAD/CAM modeling, generative design concepts, parametric sketch constraints, simulation, and toolpath generation.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> 3D Solid & Surface Modeling</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Assembly Joints & Motion Study</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> CAM Toolpath Generation</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-amber-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 9. 3D Printing & Additive Skilling -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/50 transition group" data-category="cad-3d">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="layers" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-amber-400">Additive Skilling</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">Workshop Ready</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">3D Printing & Prototyping</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              FDM/SLA slicer software mastery (Cura, PrusaSlicer), filament selection (PLA, PETG, ABS, TPU), printer calibration, and tolerance tuning.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> G-Code Slicing Optimization</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Support Geometry & Infill Strategy</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Post-Processing & Finishing</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-amber-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 10. AutoCAD -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/50 transition group" data-category="cad-3d">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="drafting-compass" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-amber-400">Industrial Drafting</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">2D / 3D Standards</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">AutoCAD (2D & 3D)</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Standard engineering drafting, floor plans, geometric dimensioning and tolerancing (GD&T), isometric projections, and architectural layouts.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Precision Engineering Drafting</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> GD&T Tolerancing Standards</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Layer Management & Plotting</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-amber-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-          <!-- 11. SolidWorks -->
-          <div class="training-card p-6 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/50 transition group" data-category="cad-3d">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition">
-              <i data-lucide="wrench" class="w-6 h-6"></i>
-            </div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-amber-400">Mechanical Design</span>
-              <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300">CSWA Prep</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">SolidWorks</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Industry-standard mechanical design: complex part features, sheet metal fabrication, weldments, mechanical assemblies, and simulation studies.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 font-mono">
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Advanced Part & Surface Features</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Sheet Metal & Weldment Modules</li>
-              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Finite Element Stress Checks</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2.5 rounded-lg bg-slate-800 hover:bg-amber-600 text-white text-xs font-semibold text-center transition">
-              Enroll / Request Syllabus
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 2: Industrial & Placement Consulting Services -->
-    <section id="services" class="py-20 border-t border-nimmakuri-border">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
-
-        <div class="mb-14 text-center max-w-3xl mx-auto">
-          <span class="text-xs font-mono uppercase tracking-widest text-sky-400">Consultancy & Advisory</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-            Industrial Solutions & Multi-Track Placement Support
-          </h2>
-          <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-            Direct operational advisory for manufacturing units, organizational cyber defense, and structured placement drives helping candidates secure careers.
-          </p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8">
-          
-          <!-- Pillar 1: Manufacturing & Cost Reduction -->
-          <div class="p-8 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/70 hover:border-sky-500/50 transition">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-6">
-              <i data-lucide="factory" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Manufacturing & Cost Cutting</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              Engineering consulting aimed at streamlining fabrication, minimizing raw material wastage, and modernizing legacy processes.
-            </p>
-            <div class="space-y-3.5 text-xs">
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-slate-200 block">Material Estimations & BOM</span>
-                <span class="text-slate-400 text-[11px]">Accurate volumetric calculations, density indexing, and Bill of Materials costing.</span>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-slate-200 block">Model Designing & Prototyping</span>
-                <span class="text-slate-400 text-[11px]">Iterative CAD design optimized for additive and CNC manufacturing.</span>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-slate-200 block">Cost-Cutting Remodeling</span>
-                <span class="text-slate-400 text-[11px]">Lightweighting, topology redesign, and cycle time reductions.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pillar 2: Cybersecurity & Defense -->
-          <div class="p-8 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/70 hover:border-teal-500/50 transition">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-6">
-              <i data-lucide="shield-check" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Cyber Defense & Security Audits</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              Protecting corporate workstations, small-to-mid enterprise networks, and academic infrastructure against modern threats.
-            </p>
-            <div class="space-y-3.5 text-xs">
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-slate-200 block">Vulnerability Assessment & Hardening</span>
-                <span class="text-slate-400 text-[11px]">Network port discovery, misconfiguration remediation, and system patching.</span>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-slate-200 block">Incident Defense Frameworks</span>
-                <span class="text-slate-400 text-[11px]">Designing response runbooks, firewall isolation, and data recovery plans.</span>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-slate-200 block">Security Awareness Training</span>
-                <span class="text-slate-400 text-[11px]">Workplace social engineering prevention and credential hygeine drills.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pillar 3: Workforce Placement Support Ecosystem -->
-          <div class="p-8 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/70 hover:border-amber-500/50 transition">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6">
-              <i data-lucide="briefcase" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Tri-Track Placement Guidance</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              Bridging job seekers with hiring partners across three distinct employment categories with customized preparation.
-            </p>
-            <div class="space-y-3.5 text-xs">
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-teal-300 block">1. IT & Technical Engineering Roles</span>
-                <span class="text-slate-400 text-[11px]">SOC analysts, network technicians, cloud associates, CAD draftspersons.</span>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-sky-300 block">2. Non-IT & Corporate Positions</span>
-                <span class="text-slate-400 text-[11px]">Operations coordinators, logistics managers, customer support, data officers.</span>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span class="font-bold text-amber-300 block">3. Blue Collar & Skilled Trades</span>
-                <span class="text-slate-400 text-[11px]">CNC machine operators, 3D printing technicians, industrial electricians, job mela coordination.</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: Curated Marketplace (Nimmakuri Recommended Store) -->
-    <section id="shopping" class="py-20 border-t border-nimmakuri-border bg-[#0a0f1d]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
-
-        <div class="text-center max-w-3xl mx-auto mb-10">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono mb-3">
-            <i data-lucide="tag" class="w-3.5 h-3.5"></i> Nimmakuri Curated Hub
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-            Curated Gear, Hardware & Study Supplies
-          </h2>
-          <p class="text-slate-400 text-sm mt-3">
-            Hand-selected equipment, apparel, daily essentials, books, and study materials tested and recommended for students and professionals.
-          </p>
-
-          <!-- Live Product Search Bar -->
-          <div class="mt-8 relative max-w-lg mx-auto">
-            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
-              <i data-lucide="search" class="w-4 h-4"></i>
-            </div>
-            <input 
-              type="text" 
-              id="shop-search" 
-              placeholder="Search products: multimeter, books, shoes, dress, kitchenware..." 
-              class="w-full pl-11 pr-4 py-3 bg-slate-900 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 text-xs shadow-lg transition"
-              oninput="filterMarketplace()"
-            />
-          </div>
-
-          <!-- Category Pills -->
-          <div class="flex flex-wrap justify-center gap-2 mt-5" id="market-filter-pills">
-            <button onclick="setMarketCategory('all')" data-cat="all" class="market-pill px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition">All Items</button>
-            <button onclick="setMarketCategory('electrical')" data-cat="electrical" class="market-pill px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Electrical & Tech</button>
-            <button onclick="setMarketCategory('apparel')" data-cat="apparel" class="market-pill px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Dress & Footwear</button>
-            <button onclick="setMarketCategory('kitchen')" data-cat="kitchen" class="market-pill px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Kitchenware & Home</button>
-            <button onclick="setMarketCategory('books')" data-cat="books" class="market-pill px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Books & Study Materials</button>
-          </div>
-        </div>
-
-        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-8 text-xs text-slate-400">
-          <span>Showing <strong id="market-item-count" class="text-amber-400">8</strong> Verified Products</span>
-          <span class="flex items-center gap-1"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-teal-400"></i> Partner & Referral Guaranteed</span>
-        </div>
-
-        <!-- Marketplace Cards Grid -->
-        <div id="marketplace-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-          <!-- Item 1: Digital Multimeter -->
-          <div class="market-item flex flex-col justify-between p-5 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/40 transition group" data-category="electrical" data-keywords="multimeter electrical testing clamp tester meter circuit voltage">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Electrical Products</span>
-                <span class="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">Lab Must-Have</span>
-              </div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition text-sm mb-1.5">True-RMS Digital Multimeter with Temperature Probe</h4>
-              <p class="text-xs text-slate-400 mb-4 line-clamp-2">High accuracy measuring AC/DC voltage, current, resistance, continuity, and diode testing for electronics technicians.</p>
-              <div class="mb-4">
-                <span class="text-base font-bold text-white">₹1,499</span>
-                <span class="text-xs text-slate-500 line-through ml-2">₹2,299</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <a href="https://amazon.in?tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer sponsored" class="flex-1 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
-                Buy with Offer <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
-              <button onclick="copyReferralLink('https://amazon.in?tag=YOUR_AMAZON_TAG', this)" class="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Copy Product Link">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Item 2: Soldering Station Kit -->
-          <div class="market-item flex flex-col justify-between p-5 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/40 transition group" data-category="electrical" data-keywords="soldering iron station kit electrical wire iot repair">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Electrical Products</span>
-                <span class="text-[10px] font-semibold text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">60W Adjustable</span>
-              </div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition text-sm mb-1.5">Adjustable Temperature Soldering Iron Kit</h4>
-              <p class="text-xs text-slate-400 mb-4 line-clamp-2">Complete set with desoldering pump, stand, tweezers, and wire spool for IoT and hardware lab prototyping.</p>
-              <div class="mb-4">
-                <span class="text-base font-bold text-white">₹899</span>
-                <span class="text-xs text-slate-500 line-through ml-2">₹1,500</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <a href="https://amazon.in?tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer sponsored" class="flex-1 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
-                Buy with Offer <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
-              <button onclick="copyReferralLink('https://amazon.in?tag=YOUR_AMAZON_TAG', this)" class="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Copy Product Link">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Item 3: Formal Interview Dress Shirts -->
-          <div class="market-item flex flex-col justify-between p-5 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/40 transition group" data-category="apparel" data-keywords="dress shirt formal interview corporate apparel clothes cloth">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Dress & Footwear</span>
-                <span class="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">Interview Prep</span>
-              </div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition text-sm mb-1.5">Classic Cotton Slim-Fit Formal Shirt (Combo)</h4>
-              <p class="text-xs text-slate-400 mb-4 line-clamp-2">Crisp, breathable premium cotton shirts ideal for corporate campus placement interviews and professional workwear.</p>
-              <div class="mb-4">
-                <span class="text-base font-bold text-white">₹999</span>
-                <span class="text-xs text-slate-500 line-through ml-2">₹1,899</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <a href="https://amazon.in?tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer sponsored" class="flex-1 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
-                Buy with Offer <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
-              <button onclick="copyReferralLink('https://amazon.in?tag=YOUR_AMAZON_TAG', this)" class="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Copy Product Link">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Item 4: Industrial Safety Shoes & Formal Shoes -->
-          <div class="market-item flex flex-col justify-between p-5 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/40 transition group" data-category="apparel" data-keywords="shoes footwear safety steel toe boots formal shoes factory workshop">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Dress & Footwear</span>
-                <span class="text-[10px] font-semibold text-sky-400 bg-sky-500/10 px-1.5 py-0.5 rounded">Steel Toe Cap</span>
-              </div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition text-sm mb-1.5">Lightweight Steel-Toe Industrial Safety Shoes</h4>
-              <p class="text-xs text-slate-400 mb-4 line-clamp-2">Puncture resistant, anti-skid comfortable safety boots for workshop floors, mechanical CAD labs, and manufacturing yards.</p>
-              <div class="mb-4">
-                <span class="text-base font-bold text-white">₹1,249</span>
-                <span class="text-xs text-slate-500 line-through ml-2">₹2,499</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <a href="https://amazon.in?tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer sponsored" class="flex-1 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
-                Buy with Offer <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
-              <button onclick="copyReferralLink('https://amazon.in?tag=YOUR_AMAZON_TAG', this)" class="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Copy Product Link">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Item 5: Stainless Steel Thermal Flask & Lunchbox -->
-          <div class="market-item flex flex-col justify-between p-5 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/40 transition group" data-category="kitchen" data-keywords="kitchenware flask bottle lunchbox steel thermal thermos cup">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Kitchenware & Home</span>
-                <span class="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">24hr Insulation</span>
-              </div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition text-sm mb-1.5">Double-Wall Vacuum Insulated Stainless Flask (1L)</h4>
-              <p class="text-xs text-slate-400 mb-4 line-clamp-2">BPA-free food-grade stainless steel bottle. Keeps liquids cold or steaming hot during full-day training shifts.</p>
-              <div class="mb-4">
-                <span class="text-base font-bold text-white">₹649</span>
-                <span class="text-xs text-slate-500 line-through ml-2">₹1,199</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <a href="https://amazon.in?tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer sponsored" class="flex-1 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
-                Buy with Offer <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
-              <button onclick="copyReferralLink('https://amazon.in?tag=YOUR_AMAZON_TAG', this)" class="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Copy Product Link">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Item 6: Kitchen Cookware Induction Pan -->
-          <div class="market-item flex flex-col justify-between p-5 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/40 transition group" data-category="kitchen" data-keywords="kitchenware induction nonstick pan cookware kitchen utensils">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Kitchenware & Home</span>
-                <span class="text-[10px] font-semibold text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">Granite Non-Stick</span>
-              </div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition text-sm mb-1.5">Granite Finish Induction Non-Stick Fry Pan</h4>
-              <p class="text-xs text-slate-400 mb-4 line-clamp-2">PFOA-free durable cookware base compatible with gas stoves and induction cooktops for everyday cooking.</p>
-              <div class="mb-4">
-                <span class="text-base font-bold text-white">₹899</span>
-                <span class="text-xs text-slate-500 line-through ml-2">₹1,499</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <a href="https://amazon.in?tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer sponsored" class="flex-1 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
-                Buy with Offer <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
-              <button onclick="copyReferralLink('https://amazon.in?tag=YOUR_AMAZON_TAG', this)" class="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Copy Product Link">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Item 7: Ethical Hacking & Cybersecurity Handbooks -->
-          <div class="market-item flex flex-col justify-between p-5 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/40 transition group" data-category="books" data-keywords="books study materials cybersecurity ethical hacking guide ceh linux manual">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Books & Study Materials</span>
-                <span class="text-[10px] font-semibold text-teal-400 bg-teal-500/10 px-1.5 py-0.5 rounded">Recommended Reading</span>
-              </div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition text-sm mb-1.5">The Web Application Hacker's Handbook (Study Edition)</h4>
-              <p class="text-xs text-slate-400 mb-4 line-clamp-2">Definitive textbook on uncovering and exploiting browser-based security flaws. Essential companion to our cybersecurity track.</p>
-              <div class="mb-4">
-                <span class="text-base font-bold text-white">₹799</span>
-                <span class="text-xs text-slate-500 line-through ml-2">₹1,299</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <a href="https://amazon.in?tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer sponsored" class="flex-1 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
-                Buy with Offer <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
-              <button onclick="copyReferralLink('https://amazon.in?tag=YOUR_AMAZON_TAG', this)" class="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Copy Product Link">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Item 8: Quantitative Aptitude & Placement Workbook -->
-          <div class="market-item flex flex-col justify-between p-5 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/60 hover:border-amber-500/40 transition group" data-category="books" data-keywords="books study materials placement aptitude quantitative reasoning non-it it test questions">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Books & Study Materials</span>
-                <span class="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">All Placements</span>
-              </div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition text-sm mb-1.5">Comprehensive Quantitative Aptitude & Logical Reasoning</h4>
-              <p class="text-xs text-slate-400 mb-4 line-clamp-2">Complete practice guide for IT campus screenings, corporate Non-IT selection tests, and competitive entrance papers.</p>
-              <div class="mb-4">
-                <span class="text-base font-bold text-white">₹599</span>
-                <span class="text-xs text-slate-500 line-through ml-2">₹950</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <a href="https://amazon.in?tag=YOUR_AMAZON_TAG" target="_blank" rel="noopener noreferrer sponsored" class="flex-1 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/20">
-                Buy with Offer <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </a>
-              <button onclick="copyReferralLink('https://amazon.in?tag=YOUR_AMAZON_TAG', this)" class="p-2 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Copy Product Link">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- No Results Fallback -->
-        <div id="no-market-results" class="hidden text-center py-16">
-          <i data-lucide="package-search" class="w-12 h-12 mx-auto text-slate-600 mb-3"></i>
-          <p class="text-white font-semibold">No items matched your search query</p>
-          <p class="text-xs text-slate-500 mt-1">Try keywords like 'electrical', 'shoes', 'study', or 'multimeter'.</p>
-          <button onclick="setMarketCategory('all'); document.getElementById('shop-search').value='';" class="mt-4 px-4 py-2 bg-amber-500 text-slate-950 font-bold rounded-lg text-xs">Reset Marketplace</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 4: Interactive Contact & Consultation Form -->
-    <section id="contact" class="py-24 border-t border-nimmakuri-border bg-nimmakuri-dark relative overflow-hidden">
-      <!-- Glow ambient background -->
-      <div class="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-teal-500/10 blur-[150px] pointer-events-none rounded-full"></div>
-
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="grid lg:grid-cols-12 gap-12">
-          
-          <!-- Contact Pitch & Direct Channels -->
-          <div class="lg:col-span-5 flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-mono uppercase tracking-widest text-teal-400">Direct Inquiries</span>
-              <h2 class="text-3xl font-extrabold text-white mt-2">Let's Collaborate</h2>
-              <p class="text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
-                Connect directly with <strong>Nimmakuri Shajukumar</strong> for institutional training bootcamps, manufacturing optimization consulting, or student placement enablement drives.
-              </p>
-
-              <div class="mt-8 space-y-4">
-                <div class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-900 border border-slate-800">
-                  <div class="w-10 h-10 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] font-mono text-slate-400 block uppercase">Primary Correspondence</span>
-                    <a href="mailto:nimmakuri.shajukumar@gmail.com" class="text-xs font-bold text-white hover:text-teal-400 transition">nimmakuri.shajukumar@gmail.com</a>
-                  </div>
-                </div>
-
-                <div class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-900 border border-slate-800">
-                  <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
-                    <i data-lucide="message-square" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] font-mono text-slate-400 block uppercase">Instant Support</span>
-                    <span class="text-xs font-bold text-white">Direct WhatsApp Dispatch</span>
-                  </div>
-                </div>
-
-                <div class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-900 border border-slate-800">
-                  <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
-                    <i data-lucide="map-pin" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] font-mono text-slate-400 block uppercase">Service Delivery</span>
-                    <span class="text-xs font-bold text-white">Pan-India On-Site & Online Hybrid</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- WhatsApp Action Box -->
-            <div class="mt-8 p-5 rounded-2xl border border-emerald-500/30 bg-emerald-950/20">
-              <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Direct WhatsApp Line</h4>
-              <p class="text-[11px] text-slate-300 mb-3">Prefer immediate texting? Send a message directly with your course or consulting topic.</p>
-              <a href="https://wa.me/?text=Hi%20Nimmakuri%20Shajukumar,%20I%20am%20interested%20in%20your%20services." target="_blank" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-600/30">
-                <i data-lucide="message-circle" class="w-4 h-4"></i> Message on WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <!-- Functional Form Container -->
-          <div class="lg:col-span-7">
-            <div class="p-6 sm:p-8 rounded-2xl border border-nimmakuri-border bg-nimmakuri-card/70">
-              <h3 class="text-lg font-bold text-white mb-1">Send Consultation Inquiry</h3>
-              <p class="text-xs text-slate-400 mb-6">Fill in your requirements below for quick response and scheduling.</p>
-
-              <!-- Formspree or custom handler -->
-              <form id="consult-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-xs">
-                <div>
-                  <label class="block text-[11px] font-mono uppercase text-slate-300 mb-1.5">Full Name *</label>
-                  <input type="text" id="form-name" required placeholder="e.g. Anand Sharma" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 transition">
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label class="block text-[11px] font-mono uppercase text-slate-300 mb-1.5">Email Address *</label>
-                    <input type="email" id="form-email" required placeholder="anand@example.com" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 transition">
-                  </div>
-                  <div>
-                    <label class="block text-[11px] font-mono uppercase text-slate-300 mb-1.5">Phone / WhatsApp *</label>
-                    <input type="tel" id="form-phone" required placeholder="+91 9876543210" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 transition">
-                  </div>
-                </div>
-
-                <div>
-                  <label class="block text-[11px] font-mono uppercase text-slate-300 mb-1.5">Service Category *</label>
-                  <select id="form-category" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-teal-500 transition">
-                    <option value="Technical Training">Technical Training (Cybersecurity, CAD, Oracle, AWS, 3D Printing)</option>
-                    <option value="Manufacturing Advice">Manufacturing Advice, Model Designing & Cost Cutting</option>
-                    <option value="Placement Support IT">Workforce Placement: IT Engineering Roles</option>
-                    <option value="Placement Support Non-IT">Workforce Placement: Non-IT & Corporate</option>
-                    <option value="Placement Support Blue Collar">Workforce Placement: Blue Collar / Skilled Trades</option>
-                    <option value="Product Referral or Partnership">Marketplace / Product Referral Partnership</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label class="block text-[11px] font-mono uppercase text-slate-300 mb-1.5">Project Scope / Message *</label>
-                  <textarea id="form-message" rows="4" required placeholder="Describe your training dates, student batch size, CAD remodeling requirement, or hiring needs..." class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 transition"></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-lg shadow-lg shadow-teal-600/30 transition text-xs tracking-wider uppercase flex items-center justify-center gap-2">
-                  <i data-lucide="send" class="w-4 h-4"></i> Submit Inquiry
-                </button>
-              </form>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer Section -->
-  <footer class="border-t border-nimmakuri-border bg-[#05070d] text-xs text-slate-500 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
-        <div>
-          <div class="flex items-center space-x-2 text-white font-extrabold text-base mb-3">
-            <span class="w-2.5 h-2.5 rounded-full bg-teal-400"></span>
-            <span>NIMMAKURI SOLUTIONS</span>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Professional technical enablement, engineering design, manufacturing cost reduction, and workforce placement led by <strong>Nimmakuri Shajukumar</strong>.
-          </p>
-        </div>
-
-        <div>
-          <h5 class="text-xs font-mono uppercase text-slate-300 mb-3">Skilling Disciplines</h5>
-          <ul class="space-y-1.5 text-xs text-slate-400">
-            <li>Ethical Hacking & Cyber Defense</li>
-            <li>IoT & Hardware Prototyping</li>
-            <li>AWS Cloud & Oracle Database / P6</li>
-            <li>Fusion 360, AutoCAD, SolidWorks</li>
-            <li>3D Printing Additive Manufacturing</li>
-          </ul>
-        </div>
-
-        <div>
-          <h5 class="text-xs font-mono uppercase text-slate-300 mb-3">Placement Tracks</h5>
-          <ul class="space-y-1.5 text-xs text-slate-400">
-            <li>IT Software & SOC Engineering</li>
-            <li>Non-IT Corporate Roles</li>
-            <li>Blue Collar Technical Trades</li>
-            <li>Campus Placement Bootcamps</li>
-          </ul>
-        </div>
-
-        <div>
-          <h5 class="text-xs font-mono uppercase text-slate-300 mb-3">Affiliate & Partner Disclosure</h5>
-          <p class="text-[11px] text-slate-400 leading-relaxed">
-            Curated marketplace recommendations contain affiliate or referral links. Purchasing through these links helps support our free community syllabus modules at no additional cost to you.
-          </p>
-        </div>
-      </div>
-
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-4">
-        <div>
-          &copy; 2026 Nimmakuri Shajukumar. All rights reserved. Built for performance and global delivery.
-        </div>
-        <div class="flex items-center space-x-4">
-          <a href="#hero" class="hover:text-teal-400 transition">Back to Top &uarr;</a>
-          <a href="#shopping" class="hover:text-amber-400 transition">Marketplace Hub</a>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Technical Trainings Grid -->
+  <section id="trainings" class="py-20 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Hands-on Curricula</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Specialized Technical Training Programs</h2>
+        <p class="text-slate-400 text-sm mt-2">Laboratory-driven courses designed for engineers, IT teams, and institutional cohorts.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
+          <i data-lucide="shield-alert" class="w-8 h-8 text-blue-400 mb-4"></i>
+          <h4 class="text-lg font-bold text-white">Cybersecurity & Ethical Hacking</h4>
+          <p class="text-xs text-slate-400 mt-2">Vulnerability scans, Kali Linux, penetration testing methodologies, defensive blue teaming, and security protocols.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
+          <i data-lucide="cloud" class="w-8 h-8 text-cyan-400 mb-4"></i>
+          <h4 class="text-lg font-bold text-white">AWS Cloud & IT Essentials</h4>
+          <p class="text-xs text-slate-400 mt-2">EC2, S3, IAM architectures, Linux operating systems, hardware virtualization, and system administration.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
+          <i data-lucide="network" class="w-8 h-8 text-emerald-400 mb-4"></i>
+          <h4 class="text-lg font-bold text-white">Networking & IoT (Internet of Things)</h4>
+          <p class="text-xs text-slate-400 mt-2">TCP/IP, routing & switching, sensor integration, microcontroller programming, and embedded IoT edge systems.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
+          <i data-lucide="printer" class="w-8 h-8 text-amber-400 mb-4"></i>
+          <h4 class="text-lg font-bold text-white">Fusion 360 & 3D Printing</h4>
+          <p class="text-xs text-slate-400 mt-2">Parametric 3D modeling, slicing configurations, additive manufacturing practicals, and rapid prototyping.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
+          <i data-lucide="layers" class="w-8 h-8 text-rose-400 mb-4"></i>
+          <h4 class="text-lg font-bold text-white">AutoCAD & SolidWorks</h4>
+          <p class="text-xs text-slate-400 mt-2">Industrial Drafting 2D/3D, mechanical assemblies, BOM preparation, stress analysis, and structural design.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
+          <i data-lucide="database" class="w-8 h-8 text-purple-400 mb-4"></i>
+          <h4 class="text-lg font-bold text-white">Oracle Primavera P6 & Oracle DB</h4>
+          <p class="text-xs text-slate-400 mt-2">Enterprise project planning, critical path schedules, resource allocation, and relational database SQL tuning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consulting & Placements -->
+  <section id="services" class="py-20 border-t border-slate-800 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Enterprise Solutions</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Consulting & Tri-Tier Placement Advisory</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]">
+          <i data-lucide="wrench" class="w-7 h-7 text-blue-400 mb-3"></i>
+          <h4 class="text-lg font-bold text-white">Manufacturing & Material Estimations</h4>
+          <p class="text-xs text-slate-400 mt-2">Engineering material audits, CNC/3D manufacturing cost cutting, design remodeling, and BOM optimization.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]">
+          <i data-lucide="shield" class="w-7 h-7 text-indigo-400 mb-3"></i>
+          <h4 class="text-lg font-bold text-white">Cyber Defense & Risk Audit</h4>
+          <p class="text-xs text-slate-400 mt-2">Corporate perimeter assessment, internal vulnerability audit, compliance reviews, and defensive incident response.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]">
+          <i data-lucide="briefcase" class="w-7 h-7 text-cyan-400 mb-3"></i>
+          <h4 class="text-lg font-bold text-white">IT Placement Pathways</h4>
+          <p class="text-xs text-slate-400 mt-2">Coding rounds preparation, live system interview drills, cloud/cyber junior engineer placement pipelines.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]">
+          <i data-lucide="users" class="w-7 h-7 text-emerald-400 mb-3"></i>
+          <h4 class="text-lg font-bold text-white">Non-IT Corporate Placement</h4>
+          <p class="text-xs text-slate-400 mt-2">Business operations, Primavera project coordinators, technical documentation, and corporate aptitude training.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]">
+          <i data-lucide="hard-hat" class="w-7 h-7 text-amber-400 mb-3"></i>
+          <h4 class="text-lg font-bold text-white">Blue-Collar & Vocational Placement</h4>
+          <p class="text-xs text-slate-400 mt-2">Hands-on shop-floor technicians, CNC operators, 3D printing technicians, HVAC, and field electrical roles.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]">
+          <i data-lucide="file-spreadsheet" class="w-7 h-7 text-rose-400 mb-3"></i>
+          <h4 class="text-lg font-bold text-white">Institutional Job Melas</h4>
+          <p class="text-xs text-slate-400 mt-2">End-to-end management of campus recruitment drives, company liaisons, candidate screening, and onboarding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING & PAYMENT GATEWAY SECTION -->
+  <section id="booking" class="py-24 border-t border-slate-800 relative">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Direct Engagement & Booking</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Schedule Consultation & Training</h2>
+        <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">
+          Secure dedicated training days or interactive online advisory sessions with transparent upfront pricing.
+        </p>
+      </div>
+
+      <!-- Pricing Plans Comparison Cards -->
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <!-- In Person -->
+        <div id="plan-card-offline" onclick="selectPlan('offline')" class="cursor-pointer p-8 rounded-3xl border-2 border-blue-500 bg-blue-950/20 relative transition hover:border-blue-400">
+          <div class="absolute top-4 right-4 bg-blue-500/20 text-blue-400 text-[11px] font-mono font-semibold px-2.5 py-1 rounded-full">
+            Recommended for Labs
+          </div>
+          <h3 class="text-xl font-bold text-white">On-Site / In-Person Training</h3>
+          <p class="text-slate-400 text-xs mt-1">Full-day hands-on lab workshop, corporate review, or campus training.</p>
+          <div class="mt-6 flex items-baseline gap-2">
+            <span class="text-4xl font-extrabold text-white">₹6,000</span>
+            <span class="text-slate-400 text-xs font-mono">/ full day</span>
+          </div>
+          <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i> Full 6-8 hours hands-on batch engagement</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i> Physical hardware / lab / 3D printing guidance</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i> Direct mock placement drills & evaluations</li>
+          </ul>
+        </div>
+
+        <!-- Online Plan -->
+        <div id="plan-card-online" onclick="selectPlan('online')" class="cursor-pointer p-8 rounded-3xl border border-slate-800 bg-[#0f172a] relative transition hover:border-blue-500">
+          <h3 class="text-xl font-bold text-white">Online Technical Advisory</h3>
+          <p class="text-slate-400 text-xs mt-1">Remote session for specialized technical guidance, cyber audits, or curriculum.</p>
+          <div class="mt-6 flex items-baseline gap-2">
+            <span class="text-4xl font-extrabold text-white">₹3,000</span>
+            <span class="text-slate-400 text-xs font-mono">/ session</span>
+          </div>
+          <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i> Dedicated 1-on-1 or group live video bridge</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i> Remote code review / CAD modeling troubleshooting</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-400"></i> Digital career profile & resume auditing</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Booking / Checkout Form -->
+      <div class="p-8 rounded-3xl border border-slate-800 bg-[#0f172a] shadow-2xl">
+        <h4 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <i data-lucide="credit-card" class="w-5 h-5 text-blue-400"></i>
+          Complete Booking Details & Payment
+        </h4>
+
+        <form id="checkoutForm" onsubmit="handlePaymentCheckout(event)" class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Your Full Name</label>
+              <input type="text" id="custName" required placeholder="e.g. Ramesh Reddy" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 transition">
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Email Address</label>
+              <input type="email" id="custEmail" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 transition">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div>
+              <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Phone / WhatsApp</label>
+              <input type="tel" id="custPhone" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 transition">
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Mode & Rate</label>
+              <select id="consultMode" onchange="updateSelectedMode(this.value)" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 transition">
+                <option value="6000">On-Site Training (₹6,000 / day)</option>
+                <option value="3000">Online Consultation (₹3,000 / session)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Number of Days / Sessions</label>
+              <input type="number" id="unitsCount" value="1" min="1" max="30" onchange="recalculateTotal()" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 transition">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Topic of Focus / Objectives</label>
+            <textarea id="consultNotes" rows="2" placeholder="e.g. 2-Day Faculty development on Fusion 360 / Cybersecurity Incident Lab setup" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 transition"></textarea>
+          </div>
+
+          <!-- Total Due Banner -->
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+            <span class="text-sm font-medium text-slate-400">Total Payable Amount:</span>
+            <span id="displayAmount" class="text-2xl font-extrabold text-blue-400">₹6,000</span>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 font-bold text-white shadow-xl shadow-blue-600/30 transition flex items-center justify-center gap-2">
+            <i data-lucide="lock" class="w-4 h-4"></i> Proceed to Pay via UPI / Cards / NetBanking
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Shopping Hub -->
+  <section id="shopping" class="py-20 border-t border-slate-800 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Curated Equipment & Materials</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Recommended Tools & Products</h2>
+          <p class="text-slate-400 text-sm mt-1">Tested hardware, books, apparel, and technical equipment.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <input type="text" id="storeSearch" onkeyup="filterStore()" placeholder="Search gear, books, apparel..." class="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
+        <!-- Item 1: Electrical -->
+        <div class="product-card p-5 rounded-2xl border border-slate-800 bg-[#0f172a] flex flex-col justify-between" data-category="electrical">
+          <div>
+            <div class="h-36 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
+              <i data-lucide="zap" class="w-12 h-12 text-yellow-400"></i>
+            </div>
+            <span class="text-[10px] font-mono text-yellow-400 uppercase tracking-wider">Electrical</span>
+            <h4 class="font-bold text-white text-base mt-1">Digital Multimeter & Lab Toolkit</h4>
+            <p class="text-xs text-slate-400 mt-1">Essential for IoT, circuit diagnostics and testing.</p>
+          </div>
+          <a href="https://amazon.in" target="_blank" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold rounded-lg text-white transition">View on Store</a>
+        </div>
+
+        <!-- Item 2: Books / Study -->
+        <div class="product-card p-5 rounded-2xl border border-slate-800 bg-[#0f172a] flex flex-col justify-between" data-category="books">
+          <div>
+            <div class="h-36 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
+              <i data-lucide="book-open" class="w-12 h-12 text-blue-400"></i>
+            </div>
+            <span class="text-[10px] font-mono text-blue-400 uppercase tracking-wider">Study Material</span>
+            <h4 class="font-bold text-white text-base mt-1">Cybersecurity & Ethical Hacking Guide</h4>
+            <p class="text-xs text-slate-400 mt-1">Comprehensive handbook for defense and pentesting.</p>
+          </div>
+          <a href="https://amazon.in" target="_blank" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold rounded-lg text-white transition">View on Store</a>
+        </div>
+
+        <!-- Item 3: Dress / Shoes -->
+        <div class="product-card p-5 rounded-2xl border border-slate-800 bg-[#0f172a] flex flex-col justify-between" data-category="apparel">
+          <div>
+            <div class="h-36 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
+              <i data-lucide="shield" class="w-12 h-12 text-emerald-400"></i>
+            </div>
+            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-wider">Safety & Apparel</span>
+            <h4 class="font-bold text-white text-base mt-1">Industrial Steel-Toe Safety Shoes</h4>
+            <p class="text-xs text-slate-400 mt-1">Protection footwear for manufacturing and workshops.</p>
+          </div>
+          <a href="https://amazon.in" target="_blank" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold rounded-lg text-white transition">View on Store</a>
+        </div>
+
+        <!-- Item 4: Kitchenware / Utilities -->
+        <div class="product-card p-5 rounded-2xl border border-slate-800 bg-[#0f172a] flex flex-col justify-between" data-category="utilities">
+          <div>
+            <div class="h-36 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
+              <i data-lucide="coffee" class="w-12 h-12 text-rose-400"></i>
+            </div>
+            <span class="text-[10px] font-mono text-rose-400 uppercase tracking-wider">Workplace Utilities</span>
+            <h4 class="font-bold text-white text-base mt-1">Insulated Smart Thermos Flask</h4>
+            <p class="text-xs text-slate-400 mt-1">High-durability stainless steel kitchenware & daily gear.</p>
+          </div>
+          <a href="https://amazon.in" target="_blank" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold rounded-lg text-white transition">View on Store</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-800 text-center text-xs text-slate-500">
+    <p>&copy; 2026 Nimmakuri Shajukumar. All rights reserved.</p>
+    <p class="mt-1">Technical Skilling &bull; Cybersecurity &bull; Manufacturing Remodeling &bull; Institutional Placements</p>
   </footer>
 
-  <!-- Floating WhatsApp Quick-Chat Trigger Widget -->
-  <a 
-    href="https://wa.me/?text=Hello%20Nimmakuri%20Shajukumar,%20I%20am%20interested%20in%20consulting%20or%20training." 
-    target="_blank" 
-    rel="noopener noreferrer"
-    title="Chat with Nimmakuri Shajukumar on WhatsApp"
-    class="fixed bottom-6 right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/50 hover:scale-110 transition duration-300"
-  >
-    <i data-lucide="message-circle" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+  <!-- Floating WhatsApp Quick Connect -->
+  <a href="https://wa.me/919999999999?text=Hello%20Shajukumar%20garu,%20I%20would%20like%20to%20inquire%20about%20your%20technical%20training%20and%20consulting%20services." target="_blank" class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl shadow-emerald-600/40 transition flex items-center justify-center hover:scale-105" title="Chat on WhatsApp">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
   </a>
 
-  <!-- Toast Notification Popup -->
-  <div id="toast-notification" class="fixed bottom-6 left-6 z-50 transform -translate-y-6 opacity-0 pointer-events-none bg-slate-900 border border-teal-500/40 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 text-xs font-semibold">
-    <i data-lucide="check-circle" class="w-4 h-4 text-teal-400"></i>
-    <span id="toast-message">Action successful!</span>
-  </div>
-
+  <!-- Payment & Dynamic Calculation Scripts -->
   <script>
-    // Initialize icons
     lucide.createIcons();
 
-    // Mobile Menu Toggle
-    function toggleMobileNav() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    }
+    let currentRate = 6000;
 
-    // Training Section Filter
-    function filterTrainings(category) {
-      const cards = document.querySelectorAll('.training-card');
-      const buttons = document.querySelectorAll('.train-btn');
+    function selectPlan(plan) {
+      const modeSelect = document.getElementById('consultMode');
+      const offlineCard = document.getElementById('plan-card-offline');
+      const onlineCard = document.getElementById('plan-card-online');
 
-      buttons.forEach(btn => {
-        btn.classList.remove('bg-teal-600', 'text-white');
-        btn.classList.add('bg-slate-800', 'text-slate-300');
-      });
-
-      event.target.classList.remove('bg-slate-800', 'text-slate-300');
-      event.target.classList.add('bg-teal-600', 'text-white');
-
-      cards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
-        if (category === 'all' || cardCat === category) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    }
-
-    // Marketplace Category Filter
-    let currentMarketCat = 'all';
-
-    function setMarketCategory(category) {
-      currentMarketCat = category;
-      const pills = document.querySelectorAll('.market-pill');
-
-      pills.forEach(pill => {
-        if (pill.getAttribute('data-cat') === category) {
-          pill.className = 'market-pill px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition';
-        } else {
-          pill.className = 'market-pill px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
-        }
-      });
-
-      filterMarketplace();
-    }
-
-    // Live Marketplace Search & Category Logic
-    function filterMarketplace() {
-      const query = document.getElementById('shop-search').value.toLowerCase().trim();
-      const items = document.querySelectorAll('.market-item');
-      let visibleCount = 0;
-
-      items.forEach(item => {
-        const itemCat = item.getAttribute('data-category');
-        const keywords = item.getAttribute('data-keywords') || '';
-        const title = item.querySelector('h4').textContent.toLowerCase();
-        const desc = item.querySelector('p').textContent.toLowerCase();
-
-        const matchesCategory = (currentMarketCat === 'all' || itemCat === currentMarketCat);
-        const matchesQuery = query === '' || 
-                             title.includes(query) || 
-                             desc.includes(query) || 
-                             keywords.toLowerCase().includes(query);
-
-        if (matchesCategory && matchesQuery) {
-          item.classList.remove('hidden');
-          visibleCount++;
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-
-      document.getElementById('market-item-count').textContent = visibleCount;
-      const noResults = document.getElementById('no-market-results');
-      if (visibleCount === 0) {
-        noResults.classList.remove('hidden');
+      if (plan === 'offline') {
+        modeSelect.value = "6000";
+        currentRate = 6000;
+        offlineCard.classList.add('border-blue-500', 'bg-blue-950/20');
+        offlineCard.classList.remove('border-slate-800', 'bg-[#0f172a]');
+        onlineCard.classList.remove('border-blue-500', 'bg-blue-950/20');
+        onlineCard.classList.add('border-slate-800', 'bg-[#0f172a]');
       } else {
-        noResults.classList.add('hidden');
+        modeSelect.value = "3000";
+        currentRate = 3000;
+        onlineCard.classList.add('border-blue-500', 'bg-blue-950/20');
+        onlineCard.classList.remove('border-slate-800', 'bg-[#0f172a]');
+        offlineCard.classList.remove('border-blue-500', 'bg-blue-950/20');
+        offlineCard.classList.add('border-slate-800', 'bg-[#0f172a]');
       }
+      recalculateTotal();
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Copy Referral Link Safely to Clipboard
-    function copyReferralLink(link, btnElement) {
+    function updateSelectedMode(val) {
+      currentRate = parseInt(val);
+      recalculateTotal();
+    }
+
+    function recalculateTotal() {
+      const units = parseInt(document.getElementById('unitsCount').value) || 1;
+      const total = currentRate * units;
+      document.getElementById('displayAmount').innerText = '₹' + total.toLocaleString('en-IN');
+    }
+
+    function handlePaymentCheckout(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const email = document.getElementById('custEmail').value;
+      const phone = document.getElementById('custPhone').value;
+      const units = parseInt(document.getElementById('unitsCount').value) || 1;
+      const totalAmount = currentRate * units;
+
+      // Razorpay Checkout Configuration
+      // Replace 'rzp_test_YourKeyHere' with your actual Razorpay Key ID from dashboard.razorpay.com
+      const options = {
+        "key": "rzp_test_YourKeyHere", 
+        "amount": totalAmount * 100, // Amount in paise
+        "currency": "INR",
+        "name": "Nimmakuri Shajukumar",
+        "description": "Technical Training & Advisory Consultation",
+        "image": "https://cdn-icons-png.flaticon.com/512/9446/9446972.png",
+        "handler": function (response) {
+          alert("Payment Successful! Transaction ID: " + response.razorpay_payment_id + ". We will contact you immediately at " + phone);
+        },
+        "prefill": {
+          "name": name,
+          "email": email,
+          "contact": phone
+        },
+        "theme": {
+          "color": "#2563eb"
+        }
+      };
+
       try {
-        const temp = document.createElement("input");
-        temp.value = link;
-        document.body.appendChild(temp);
-        temp.select();
-        document.execCommand("copy");
-        document.body.removeChild(temp);
-        showToast("Referral link copied to clipboard!");
-      } catch (e) {
-        showToast("Referral link: " + link);
+        const rzp = new Razorpay(options);
+        rzp.on('payment.failed', function (response){
+          alert("Payment Failed: " + response.error.description);
+        });
+        rzp.open();
+      } catch (err) {
+        // Fallback for testing / UPI direct if keys are not yet configured
+        const upiLink = `upi://pay?pa=your-upi-id@oksbi&pn=NimmakuriShajukumar&am=${totalAmount}&cu=INR&tn=ConsultationBooking`;
+        alert(`Opening Payment Gateway for ₹${totalAmount}. If Razorpay key is in test mode, you can also complete payment via UPI.`);
+        window.location.href = upiLink;
       }
     }
 
-    // Form Submission Handling
-    function handleFormSubmit(event) {
-      event.preventDefault();
-      const name = document.getElementById('form-name').value;
-      const category = document.getElementById('form-category').value;
-      const phone = document.getElementById('form-phone').value;
-      const message = document.getElementById('form-message').value;
-
-      // Construct direct WhatsApp dispatch URL for instant messaging
-      const whatsappText = encodeURIComponent(
-        `Hello Nimmakuri Shajukumar,\nMy Name: ${name}\nCategory: ${category}\nPhone: ${phone}\nMessage: ${message}`
-      );
-      
-      showToast("Thank you " + name + "! Opening WhatsApp conversation...");
-      
-      setTimeout(() => {
-        window.open(`https://wa.me/?text=${whatsappText}`, '_blank');
-        document.getElementById('consult-form').reset();
-      }, 1000);
-    }
-
-    // Toast Notification Display Helper
-    function showToast(msg) {
-      const toast = document.getElementById('toast-notification');
-      document.getElementById('toast-message').textContent = msg;
-      lucide.createIcons();
-
-      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-6');
-      toast.classList.add('opacity-100', 'translate-y-0');
-
-      setTimeout(() => {
-        toast.classList.remove('opacity-100', 'translate-y-0');
-        toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-6');
-      }, 3000);
+    function filterStore() {
+      const q = document.getElementById('storeSearch').value.toLowerCase();
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(q) ? 'flex' : 'none';
+      });
     }
   </script>
 </body>
