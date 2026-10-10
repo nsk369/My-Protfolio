@@ -6,7 +6,7 @@
   <title>Nimmakuri Shajukumar | Technical Advisory, Trainings & Commerce Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Razorpay Checkout Standard SDK -->
@@ -94,13 +94,13 @@
           <div class="relative p-6 sm:p-8 rounded-3xl border border-slate-800 bg-[#0f172a] shadow-2xl overflow-hidden group">
             <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
             
-            <!-- Founder Profile Picture -->
-            <div class="relative w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-2xl overflow-hidden border-2 border-blue-500/40 shadow-xl shadow-blue-600/20 mb-6 bg-slate-800">
+            <!-- Founder Profile Picture with Auto-Fallback Chain -->
+            <div class="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-2xl overflow-hidden border-2 border-blue-500/40 shadow-xl shadow-blue-600/20 mb-6 bg-slate-800 flex items-center justify-center">
               <img 
                 src="founder.png" 
                 alt="Nimmakuri Shajukumar" 
                 class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
-                onerror="this.onerror=null; this.src='1784826733448.png';"
+                onerror="if (!this.dataset.fallback1) { this.dataset.fallback1 = true; this.src = '1784826733448.png'; } else if (!this.dataset.fallback2) { this.dataset.fallback2 = true; this.src = 'https://raw.githubusercontent.com/nsk369/My-Protfolio/main/founder.png'; } else if (!this.dataset.fallback3) { this.dataset.fallback3 = true; this.src = 'https://raw.githubusercontent.com/nsk369/My-Protfolio/main/1784826733448.png'; }"
               />
             </div>
 
@@ -141,45 +141,8 @@
             <p>
               Drawing on a deep track record of orchestrating large-scale workforce development initiatives, faculty enrichment programs, and state-wide recruitment job melas, his methodology pairs rigorous hands-on laboratory practice with measurable career employability.
             </p>
-            <p>
+            <p class="font-medium text-slate-200">
               Core Areas of Practice:
-            </p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-300">
-              <li class="flex items-start gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
-                <span><strong>Defensive Cybersecurity:</strong> Ethical Hacking, Incident Handling & Network Hardening.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
-                <span><strong>Advanced Manufacturing:</strong> Fusion 360, 3D Printing, AutoCAD, SolidWorks.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
-                <span><strong>Enterprise Technology:</strong> Oracle Primavera P6, Oracle DB, AWS Cloud & IoT.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
-                <span><strong>Employment Linkages:</strong> End-to-end guidance for IT, Non-IT, & Blue-Collar placements.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-        <!-- Bio & Credentials Details -->
-        <div class="lg:col-span-7">
-          <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Leadership & Credentials</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">About the Founder</h2>
-          <div class="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
-            <p>
-              <strong class="text-white">Nimmakuri Shajukumar</strong> is an experienced Technical Trainer, Industrial Consultant, and Placement Liaison with a deep track record of empowering institutions, engineering colleges, and corporate workforces across emerging technical domains.
-            </p>
-            <p>
-              Having orchestrated extensive state-level workforce skilling programs, job melas, and faculty enablement partnerships (including initiatives with TASK, academic universities, and technology enterprises), his methodology combines hands-on laboratory rigor with real-world employability.
-            </p>
-            <p>
-              His multi-disciplinary practice spans:
             </p>
             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-300">
               <li class="flex items-start gap-2">
@@ -215,37 +178,31 @@
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1 -->
         <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
           <i data-lucide="shield-alert" class="w-8 h-8 text-blue-400 mb-4"></i>
           <h4 class="text-lg font-bold text-white">Cybersecurity & Ethical Hacking</h4>
           <p class="text-xs text-slate-400 mt-2">Vulnerability scans, Kali Linux, penetration testing methodologies, defensive blue teaming, and security protocols.</p>
         </div>
-        <!-- Card 2 -->
         <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
           <i data-lucide="cloud" class="w-8 h-8 text-cyan-400 mb-4"></i>
           <h4 class="text-lg font-bold text-white">AWS Cloud & IT Essentials</h4>
           <p class="text-xs text-slate-400 mt-2">EC2, S3, IAM architectures, Linux operating systems, hardware virtualization, and system administration.</p>
         </div>
-        <!-- Card 3 -->
         <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
           <i data-lucide="network" class="w-8 h-8 text-emerald-400 mb-4"></i>
           <h4 class="text-lg font-bold text-white">Networking & IoT (Internet of Things)</h4>
           <p class="text-xs text-slate-400 mt-2">TCP/IP, routing & switching, sensor integration, microcontroller programming, and embedded IoT edge systems.</p>
         </div>
-        <!-- Card 4 -->
         <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
           <i data-lucide="printer" class="w-8 h-8 text-amber-400 mb-4"></i>
           <h4 class="text-lg font-bold text-white">Fusion 360 & 3D Printing</h4>
           <p class="text-xs text-slate-400 mt-2">Parametric 3D modeling, slicing configurations, additive manufacturing practicals, and rapid prototyping.</p>
         </div>
-        <!-- Card 5 -->
         <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
           <i data-lucide="layers" class="w-8 h-8 text-rose-400 mb-4"></i>
           <h4 class="text-lg font-bold text-white">AutoCAD & SolidWorks</h4>
           <p class="text-xs text-slate-400 mt-2">Industrial Drafting 2D/3D, mechanical assemblies, BOM preparation, stress analysis, and structural design.</p>
         </div>
-        <!-- Card 6 -->
         <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition">
           <i data-lucide="database" class="w-8 h-8 text-purple-400 mb-4"></i>
           <h4 class="text-lg font-bold text-white">Oracle Primavera P6 & Oracle DB</h4>
@@ -311,7 +268,6 @@
 
       <!-- Pricing Plans Comparison Cards -->
       <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <!-- In Person -->
         <div id="plan-card-offline" onclick="selectPlan('offline')" class="cursor-pointer p-8 rounded-3xl border-2 border-blue-500 bg-blue-950/20 relative transition hover:border-blue-400">
           <div class="absolute top-4 right-4 bg-blue-500/20 text-blue-400 text-[11px] font-mono font-semibold px-2.5 py-1 rounded-full">
             Recommended for Labs
@@ -329,7 +285,6 @@
           </ul>
         </div>
 
-        <!-- Online Plan -->
         <div id="plan-card-online" onclick="selectPlan('online')" class="cursor-pointer p-8 rounded-3xl border border-slate-800 bg-[#0f172a] relative transition hover:border-blue-500">
           <h3 class="text-xl font-bold text-white">Online Technical Advisory</h3>
           <p class="text-slate-400 text-xs mt-1">Remote session for specialized technical guidance, cyber audits, or curriculum.</p>
@@ -387,7 +342,6 @@
             <textarea id="consultNotes" rows="2" placeholder="e.g. 2-Day Faculty development on Fusion 360 / Cybersecurity Incident Lab setup" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 transition"></textarea>
           </div>
 
-          <!-- Total Due Banner -->
           <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
             <span class="text-sm font-medium text-slate-400">Total Payable Amount:</span>
             <span id="displayAmount" class="text-2xl font-extrabold text-blue-400">₹6,000</span>
@@ -416,7 +370,6 @@
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
-        <!-- Item 1: Electrical -->
         <div class="product-card p-5 rounded-2xl border border-slate-800 bg-[#0f172a] flex flex-col justify-between" data-category="electrical">
           <div>
             <div class="h-36 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
@@ -429,7 +382,6 @@
           <a href="https://amazon.in" target="_blank" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold rounded-lg text-white transition">View on Store</a>
         </div>
 
-        <!-- Item 2: Books / Study -->
         <div class="product-card p-5 rounded-2xl border border-slate-800 bg-[#0f172a] flex flex-col justify-between" data-category="books">
           <div>
             <div class="h-36 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
@@ -442,7 +394,6 @@
           <a href="https://amazon.in" target="_blank" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold rounded-lg text-white transition">View on Store</a>
         </div>
 
-        <!-- Item 3: Dress / Shoes -->
         <div class="product-card p-5 rounded-2xl border border-slate-800 bg-[#0f172a] flex flex-col justify-between" data-category="apparel">
           <div>
             <div class="h-36 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
@@ -455,7 +406,6 @@
           <a href="https://amazon.in" target="_blank" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold rounded-lg text-white transition">View on Store</a>
         </div>
 
-        <!-- Item 4: Kitchenware / Utilities -->
         <div class="product-card p-5 rounded-2xl border border-slate-800 bg-[#0f172a] flex flex-col justify-between" data-category="utilities">
           <div>
             <div class="h-36 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
@@ -531,11 +481,9 @@
       const units = parseInt(document.getElementById('unitsCount').value) || 1;
       const totalAmount = currentRate * units;
 
-      // Razorpay Checkout Configuration
-      // Replace 'rzp_test_YourKeyHere' with your actual Razorpay Key ID from dashboard.razorpay.com
       const options = {
         "key": "rzp_test_YourKeyHere", 
-        "amount": totalAmount * 100, // Amount in paise
+        "amount": totalAmount * 100,
         "currency": "INR",
         "name": "Nimmakuri Shajukumar",
         "description": "Technical Training & Advisory Consultation",
@@ -560,7 +508,6 @@
         });
         rzp.open();
       } catch (err) {
-        // Fallback for testing / UPI direct if keys are not yet configured
         const upiLink = `upi://pay?pa=your-upi-id@oksbi&pn=NimmakuriShajukumar&am=${totalAmount}&cu=INR&tn=ConsultationBooking`;
         alert(`Opening Payment Gateway for ₹${totalAmount}. If Razorpay key is in test mode, you can also complete payment via UPI.`);
         window.location.href = upiLink;
