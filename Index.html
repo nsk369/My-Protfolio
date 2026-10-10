@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Consulting, Cybersecurity & Placement Advisory</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              500: '#3b82f6',
+              600: '#2563eb',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b0f19] text-slate-200 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-[#0b0f19]/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="h-10 w-10 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20">
+          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+        <span class="text-xl font-extrabold tracking-tight text-white">TECH<span class="text-blue-500">NEXUS</span></span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#services" class="hover:text-blue-400 transition">Solutions</a>
+        <a href="#domains" class="hover:text-blue-400 transition">Core Domains</a>
+        <a href="#impact" class="hover:text-blue-400 transition">Impact</a>
+        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition shadow-md shadow-blue-600/30">Connect Directly</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto relative overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-500/10 blur-[130px] pointer-events-none rounded-full"></div>
+    
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-mono mb-6">
+        <span class="h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
+        Industry Skilling &bull; Cybersecurity &bull; Workforce Placement
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+        Bridging Technical Execution, Defense, and Industry Careers.
+      </h1>
+      <p class="mt-6 text-lg text-slate-400 leading-relaxed">
+        High-impact consulting and specialized workforce programs spanning hands-on cybersecurity readiness, digital manufacturing, and tailored placement pathways for institutions and corporate talent.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#services" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 font-semibold text-white shadow-lg shadow-blue-600/30 transition flex items-center gap-2">
+          Explore Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <!-- Replace YOUR_DRIVE_SHARE_LINK with direct link to brochure stored on your 5TB drive -->
+        <a href="#resources" class="px-6 py-3.5 rounded-xl border border-slate-700 hover:bg-slate-800/60 font-semibold text-slate-300 transition flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4"></i> Course Modules & Docs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Grid -->
+  <section id="services" class="py-20 border-t border-slate-800/80 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-14">
+        <h2 class="text-xs uppercase font-mono tracking-widest text-blue-400">Capabilities & Services</h2>
+        <h3 class="text-3xl font-bold text-white mt-2">Comprehensive Technical Pillars</h3>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Service 1: Cybersecurity -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition group">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Cybersecurity & Defense</h4>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            Incident triage methodologies, vulnerability analysis, defensive blue-teaming frameworks, and hands-on laboratory setups.
+          </p>
+          <span class="text-xs font-mono text-blue-400">SOC Prep &bull; Incident Response &bull; Audits</span>
+        </div>
+
+        <!-- Service 2: Technology Training -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Tech Skilling & Labs</h4>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            Curriculum design and execution across Linux administration, cloud systems, and applied software engineering stacks.
+          </p>
+          <span class="text-xs font-mono text-cyan-400">Linux &bull; Cloud &bull; Applied Development</span>
+        </div>
+
+        <!-- Service 3: Manufacturing Skilling -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+            <i data-lucide="cog" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Manufacturing & CAD</h4>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            Hands-on workflows covering 3D modeling, additive manufacturing (3D printing), and industrial product prototyping.
+          </p>
+          <span class="text-xs font-mono text-emerald-400">Fusion 360 &bull; 3D Prototyping &bull; CNC/CAD</span>
+        </div>
+
+        <!-- Service 4: Placement Guidance -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-[#0f172a]/60 hover:border-blue-500/50 transition group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Placement Advisory</h4>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            Job mela coordination, institutional campus placements, industry resume alignment, and technical interview preparation.
+          </p>
+          <span class="text-xs font-mono text-amber-400">Job Melas &bull; Mock Drills &bull; Hiring Alignment</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drive Resource Hub Section -->
+  <section id="resources" class="py-20 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="p-8 rounded-2xl border border-slate-800 bg-gradient-to-r from-blue-950/20 to-slate-900 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="text-2xl font-bold text-white">Resource & Syllabus Repository</h4>
+          <p class="text-slate-400 text-sm mt-1 max-w-xl">
+            Access training course outlines, technical reading materials, and placement drive schedules hosted via direct repository mirrors.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <!-- Link to your public Google Drive folder containing course outlines -->
+          <a href="#" target="_blank" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm flex items-center gap-2 border border-slate-700">
+            <i data-lucide="folder-down" class="w-4 h-4"></i> Access Public Drive Folder
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-extrabold text-white">Initiate a Partnership or Consultation</h2>
+      <p class="mt-4 text-slate-400">
+        Available for institutional training workshops, organizational cybersecurity reviews, and student placement enablement programs.
+      </p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="mailto:contact@yourdomain.com" class="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 font-semibold text-white shadow-xl shadow-blue-600/30 transition flex items-center gap-2">
+          <i data-lucide="mail" class="w-5 h-5"></i> Send Email Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-800/80 text-center text-xs text-slate-500">
+    &copy; 2026 Technical Advisory & Consulting Services. Built for performance and global delivery.
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
