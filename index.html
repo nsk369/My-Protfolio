@@ -89,36 +89,84 @@
   <section id="about" class="py-20 border-t border-slate-800 bg-slate-900/30">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <!-- Visual Badge Card -->
+        <!-- Visual Founder Card with Portrait -->
         <div class="lg:col-span-5">
-          <div class="relative p-8 rounded-3xl border border-slate-800 bg-[#0f172a] shadow-2xl">
-            <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-3xl font-extrabold text-white shadow-lg shadow-blue-500/30 mb-6">
-              NS
-            </div>
-            <h3 class="text-2xl font-bold text-white">Nimmakuri Shajukumar</h3>
-            <p class="text-sm font-mono text-blue-400 mt-1">Senior Technical Trainer & Industry Liaison Specialist</p>
+          <div class="relative p-6 sm:p-8 rounded-3xl border border-slate-800 bg-[#0f172a] shadow-2xl overflow-hidden group">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="mt-6 space-y-3 border-t border-slate-800 pt-6 text-xs text-slate-300 font-mono">
-              <div class="flex items-center gap-2">
-                <i data-lucide="award" class="w-4 h-4 text-blue-400"></i>
-                <span>Over 8+ Years of Skilling & Training Excellence</span>
+            <!-- Founder Profile Picture -->
+            <div class="relative w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-2xl overflow-hidden border-2 border-blue-500/40 shadow-xl shadow-blue-600/20 mb-6 bg-slate-800">
+              <img 
+                src="founder.png" 
+                alt="Nimmakuri Shajukumar" 
+                class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
+                onerror="this.onerror=null; this.src='1784826733448.png';"
+              />
+            </div>
+
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-white tracking-tight">Nimmakuri Shajukumar</h3>
+              <p class="text-xs sm:text-sm font-mono text-blue-400 mt-1">Technical Trainer & Liaison Specialist</p>
+            </div>
+            
+            <div class="mt-6 space-y-3 border-t border-slate-800/80 pt-6 text-xs text-slate-300 font-mono">
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="award" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                <span>Over 8+ Years of Technical Skilling Leadership</span>
               </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
                 <span>Cybersecurity & Infrastructure Specialist</span>
               </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="box" class="w-4 h-4 text-amber-400"></i>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="box" class="w-4 h-4 text-amber-400 shrink-0"></i>
                 <span>CAD, Additive Manufacturing & Fusion 360</span>
               </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="users" class="w-4 h-4 text-cyan-400"></i>
-                <span>State & Institutional Placement Drive Lead</span>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="users" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                <span>Corporate, IT & Blue-Collar Placement Drives</span>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Bio & Credentials Details -->
+        <div class="lg:col-span-7">
+          <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Leadership & Credentials</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">About the Founder</h2>
+          <div class="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p>
+              <strong class="text-white">Nimmakuri Shajukumar</strong> is a seasoned Technical Trainer, Industrial Consultant, and Placement Liaison dedicated to empowering institutions, colleges, and corporate technical workforces across high-growth domains.
+            </p>
+            <p>
+              Drawing on a deep track record of orchestrating large-scale workforce development initiatives, faculty enrichment programs, and state-wide recruitment job melas, his methodology pairs rigorous hands-on laboratory practice with measurable career employability.
+            </p>
+            <p>
+              Core Areas of Practice:
+            </p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                <span><strong>Defensive Cybersecurity:</strong> Ethical Hacking, Incident Handling & Network Hardening.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                <span><strong>Advanced Manufacturing:</strong> Fusion 360, 3D Printing, AutoCAD, SolidWorks.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                <span><strong>Enterprise Technology:</strong> Oracle Primavera P6, Oracle DB, AWS Cloud & IoT.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                <span><strong>Employment Linkages:</strong> End-to-end guidance for IT, Non-IT, & Blue-Collar placements.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
         <!-- Bio & Credentials Details -->
         <div class="lg:col-span-7">
           <span class="text-xs font-mono uppercase tracking-widest text-blue-400">Leadership & Credentials</span>
