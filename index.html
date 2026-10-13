@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nimmakuri Shajukumar | Technical Advisory, Trainings & Commerce Hub</title>
+  
+  <!-- Embedded High-Tech Shield Monogram Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3ClinearGradient id='sqGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%231e293b'/%3E%3Cstop offset='100%25' stop-color='%230f172a'/%3E%3C/linearGradient%3E%3ClinearGradient id='neonN' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%232563eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='5' y='5' width='110' height='110' rx='28' fill='url(%23sqGrad)' stroke='%23334155' stroke-width='2'/%3E%3Cpath d='M 60,18 L 92,32 C 92,68 76,92 60,100 C 44,92 28,68 28,32 Z' fill='none' stroke='%231d4ed8' stroke-width='2' opacity='0.4'/%3E%3Cpath d='M 44,40 L 44,80' stroke='url(%23neonN)' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M 44,43 L 76,77' stroke='%2338bdf8' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M 76,40 L 76,80' stroke='url(%23neonN)' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='60' cy='60' r='4' fill='%23ffffff'/%3E%3C/svg%3E">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -33,16 +37,32 @@
 </head>
 <body class="bg-[#0b0f19] text-slate-200 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- Top Navigation -->
+  <!-- Top Navigation with Custom Vector Monogram Logo -->
   <nav class="fixed top-0 w-full z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="h-10 w-10 rounded-xl bg-blue-600 flex items-center justify-center font-extrabold text-white shadow-lg shadow-blue-500/25">
-          <span>NS</span>
+      <div class="flex items-center space-x-3.5">
+        <!-- Shield Monogram Vector Logo -->
+        <div class="h-11 w-11 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center p-1.5 shadow-lg shadow-blue-500/20 group hover:border-blue-500 transition duration-300">
+          <svg viewBox="0 0 100 100" class="w-full h-full">
+            <defs>
+              <linearGradient id="navCyberBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8" />
+                <stop offset="100%" stop-color="#1d4ed8" />
+              </linearGradient>
+            </defs>
+            <!-- Shield Contour -->
+            <path d="M 50,5 L 88,22 C 88,60 68,88 50,96 C 32,88 12,60 12,22 Z" fill="none" stroke="url(#navCyberBlue)" stroke-width="4" stroke-linejoin="round"/>
+            <!-- Isometric N Structure -->
+            <path d="M 34,35 L 34,68" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+            <path d="M 34,38 L 66,65" stroke="#2563eb" stroke-width="7" stroke-linecap="round"/>
+            <path d="M 66,35 L 66,68" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+            <!-- Nexus Tech Node -->
+            <circle cx="50" cy="51.5" r="4.5" fill="#38bdf8"/>
+          </svg>
         </div>
         <div>
           <span class="text-xl font-extrabold tracking-tight text-white">NIMMAKURI<span class="text-blue-500">.IO</span></span>
-          <p class="text-[10px] text-slate-400 font-mono tracking-wider uppercase">Technical Consultancy & Skilling</p>
+          <p class="text-[10px] text-slate-400 font-mono tracking-wider uppercase">Tech Advisory &bull; Defense &bull; Skilling</p>
         </div>
       </div>
       <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
