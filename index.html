@@ -242,11 +242,23 @@
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]">
-          <i data-lucide="wrench" class="w-7 h-7 text-blue-400 mb-3"></i>
-          <h4 class="text-lg font-bold text-white">Manufacturing & Material Estimations</h4>
+        <!-- Clickable Manufacturing Card with Modal Trigger -->
+        <div onclick="openMfgModal()" class="group cursor-pointer p-6 rounded-2xl border border-blue-500/40 bg-gradient-to-br from-[#0f172a] to-blue-950/20 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/10 transition duration-300 relative">
+          <div class="flex items-center justify-between mb-3">
+            <i data-lucide="wrench" class="w-7 h-7 text-blue-400 group-hover:scale-110 transition duration-300"></i>
+            <span class="inline-flex items-center gap-1 text-[11px] font-mono font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded-full">
+              <span>View Syllabus</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </span>
+          </div>
+          <h4 class="text-lg font-bold text-white group-hover:text-blue-300 transition">Manufacturing & Material Estimations</h4>
           <p class="text-xs text-slate-400 mt-2">Engineering material audits, CNC/3D manufacturing cost cutting, design remodeling, and BOM optimization.</p>
+          <div class="mt-4 flex items-center gap-1 text-xs font-semibold text-blue-400 group-hover:translate-x-1 transition duration-300">
+            <span>Explore Modules & Outcomes</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
         </div>
+
         <div class="p-6 rounded-2xl border border-slate-800 bg-[#0f172a]">
           <i data-lucide="shield" class="w-7 h-7 text-indigo-400 mb-3"></i>
           <h4 class="text-lg font-bold text-white">Cyber Defense & Risk Audit</h4>
@@ -442,6 +454,133 @@
     </div>
   </section>
 
+  <!-- Manufacturing & Material Estimations Course Content Modal -->
+  <div id="mfgModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-[#0f172a] border border-slate-700 w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col relative transform scale-95 transition-transform duration-300" id="mfgModalBox">
+      <!-- Modal Header -->
+      <div class="p-6 sm:p-8 border-b border-slate-800 bg-slate-900/60 flex items-start justify-between">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
+            <i data-lucide="wrench" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[11px] font-mono mb-1">
+              <span>Complete Curriculum & Industrial Outline</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Manufacturing & Material Estimations</h3>
+          </div>
+        </div>
+        <button onclick="closeMfgModal()" class="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Course Modules) -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-slate-300 text-sm leading-relaxed">
+        
+        <!-- Summary Box -->
+        <div class="p-4 rounded-2xl bg-blue-950/20 border border-blue-500/30 text-slate-300">
+          <p class="text-xs sm:text-sm">
+            <strong class="text-white">Program Overview:</strong> A specialized hands-on engineering program designed by Nimmakuri Shajukumar covering end-to-end industrial product realization—from raw material takeoff and Bill of Materials (BOM) budgeting to generative CAD remodeling, CNC tooling estimations, and additive prototyping cost reduction.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <!-- Module 1 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <div class="flex items-center gap-2 text-blue-400 font-mono text-xs font-semibold mb-2">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>Module 1: Material Science & Classification</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-2">Industrial Stock & Metallurgy</h4>
+            <ul class="space-y-1.5 text-xs text-slate-400">
+              <li>&bull; Ferrous vs. Non-Ferrous alloys, engineering polymers & composites</li>
+              <li>&bull; Density matrices, yield strength vs. weight calculations</li>
+              <li>&bull; Scrap allowance, kerf loss, and raw blank size planning</li>
+            </ul>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-semibold mb-2">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+              <span>Module 2: Take-Off & BOM Costing</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-2">Bill of Materials (BOM) & Budgeting</h4>
+            <ul class="space-y-1.5 text-xs text-slate-400">
+              <li>&bull; Automated BOM extraction from 3D CAD assemblies (SolidWorks/Fusion 360)</li>
+              <li>&bull; Hardware, standard fasteners, surface finishes & treatment costing</li>
+              <li>&bull; Vendor procurement quotation analysis & batch rate tiering</li>
+            </ul>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <div class="flex items-center gap-2 text-emerald-400 font-mono text-xs font-semibold mb-2">
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+              <span>Module 3: Machining & Process Economics</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-2">Cycle Times & Machine-Hour Rates</h4>
+            <ul class="space-y-1.5 text-xs text-slate-400">
+              <li>&bull; CNC milling, turning, sheet metal shearing & laser cutting cycle times</li>
+              <li>&bull; Tooling wear rates, machine depreciation, and setup cost factors</li>
+              <li>&bull; Operator labor allocation and shop-floor overhead calculation</li>
+            </ul>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+            <div class="flex items-center gap-2 text-amber-400 font-mono text-xs font-semibold mb-2">
+              <i data-lucide="box" class="w-4 h-4"></i>
+              <span>Module 4: Design for Manufacturability (DFM)</span>
+            </div>
+            <h4 class="text-white font-bold text-sm mb-2">Cost-Cutting Remodeling & Prototyping</h4>
+            <ul class="space-y-1.5 text-xs text-slate-400">
+              <li>&bull; Eliminating unnecessary machining passes and deep-pocket tooling</li>
+              <li>&bull; Additive manufacturing (3D printing) vs. injection molding threshold analysis</li>
+              <li>&bull; Real-world case study: 20-35% manufacturing cost reduction through remodeling</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Learning Outcomes -->
+        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800">
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider font-mono text-blue-400 mb-2">Key Competencies Acquired</h4>
+          <div class="grid sm:grid-cols-3 gap-3 text-xs text-slate-300 font-mono">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>Precision Cost Sheet Audits</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>CAD DFM Re-engineering</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>Shop-floor Ready BOM Estimation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-6 border-t border-slate-800 bg-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-xs text-slate-400">
+          Offered both in-person for workshops and online advisory sessions.
+        </div>
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+          <button onclick="closeMfgModal()" class="px-5 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-xs font-semibold text-slate-300 transition w-full sm:w-auto">
+            Close
+          </button>
+          <button onclick="enrollInMfg()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2 w-full sm:w-auto">
+            <span>Book Consultation for this Course</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="py-10 border-t border-slate-800 text-center text-xs text-slate-500">
     <p>&copy; 2026 Nimmakuri Nexus. All rights reserved.</p>
@@ -453,11 +592,51 @@
     <i data-lucide="message-circle" class="w-6 h-6"></i>
   </a>
 
-  <!-- Payment & Dynamic Calculation Scripts -->
+  <!-- Payment & Dynamic Calculation Scripts & Modal Logic -->
   <script>
     lucide.createIcons();
 
     let currentRate = 6000;
+
+    // Modal Operations
+    function openMfgModal() {
+      const modal = document.getElementById('mfgModal');
+      const box = document.getElementById('mfgModalBox');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        box.classList.remove('scale-95');
+        box.classList.add('scale-100');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMfgModal() {
+      const modal = document.getElementById('mfgModal');
+      const box = document.getElementById('mfgModalBox');
+      modal.classList.add('opacity-0');
+      box.classList.remove('scale-100');
+      box.classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+
+    function enrollInMfg() {
+      closeMfgModal();
+      document.getElementById('consultNotes').value = "Inquiry & Booking for: Manufacturing & Material Estimations (DFM, Cost Cutting & BOM Costing)";
+      selectPlan('offline');
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Close on Escape or Background Click
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMfgModal();
+    });
+    document.getElementById('mfgModal').addEventListener('click', (e) => {
+      if (e.target.id === 'mfgModal') closeMfgModal();
+    });
 
     function selectPlan(plan) {
       const modeSelect = document.getElementById('consultMode');
